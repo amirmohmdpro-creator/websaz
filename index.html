@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>وب‌ساز | طراحی سایت حرفه‌ای</title>
+<meta name="description" content="وب‌ساز؛ طراحی سایت حرفه‌ای، مدرن و واکنش‌گرا برای کسب‌وکارها، کانال‌ها و سرورها.">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Tahoma,Arial,sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#07110d;
+    color:#fff;
+    line-height:1.8;
+}
+
+/* HEADER */
+header{
+    position:fixed;
+    top:0;
+    right:0;
+    left:0;
+    z-index:1000;
+    background:rgba(4,15,11,.9);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(0,255,140,.15);
+}
+
+.navbar{
+    max-width:1100px;
+    margin:auto;
+    padding:15px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    color:#20ff91;
+    font-size:23px;
+    font-weight:bold;
+}
+
+.logo span{
+    color:white;
+}
+
+nav{
+    display:flex;
+    gap:20px;
+}
+
+nav a{
+    color:#ddd;
+    text-decoration:none;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#20ff91;
+}
+
+/* HERO */
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:120px 20px 70px;
+    background:
+    radial-gradient(circle at center,#0b4229 0%,#07110d 45%,#020604 100%);
+}
+
+.hero-box{
+    max-width:850px;
+}
+
+.badge{
+    display:inline-block;
+    padding:7px 16px;
+    border:1px solid #20ff91;
+    border-radius:30px;
+    color:#20ff91;
+    margin-bottom:20px;
+    font-size:14px;
+}
+
+.hero h1{
+    font-size:clamp(40px,8vw,75px);
+    margin-bottom:15px;
+}
+
+.hero h1 span{
+    color:#20ff91;
+}
+
+.hero p{
+    color:#bbb;
+    font-size:18px;
+    max-width:650px;
+    margin:auto;
+}
+
+.buttons{
+    margin-top:30px;
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-block;
+    padding:13px 25px;
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:#20ff91;
+    color:#031008;
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 30px rgba(32,255,145,.25);
+}
+
+.btn-secondary{
+    border:1px solid #20ff91;
+    color:#20ff91;
+}
+
+.btn-secondary:hover{
+    background:#20ff91;
+    color:#031008;
+}
+
+/* SECTIONS */
+section{
+    padding:90px 20px;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.section-title h2{
+    font-size:35px;
+}
+
+.section-title span{
+    color:#20ff91;
+}
+
+.section-title p{
+    color:#999;
+    margin-top:8px;
+}
+
+/* SERVICES */
+.services{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.card{
+    background:linear-gradient(145deg,#0d2118,#08130e);
+    border:1px solid rgba(32,255,145,.13);
+    border-radius:20px;
+    padding:28px;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-7px);
+    border-color:#20ff91;
+}
+
+.icon{
+    font-size:40px;
+    margin-bottom:12px;
+}
+
+.card h3{
+    margin-bottom:8px;
+    color:#20ff91;
+}
+
+.card p{
+    color:#aaa;
+}
+
+/* WHY US */
+.why{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.why-box{
+    background:#09150f;
+    border-right:4px solid #20ff91;
+    padding:22px;
+    border-radius:12px;
+}
+
+.why-box h3{
+    margin-bottom:5px;
+}
+
+/* PRICES */
+.prices{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.price-card{
+    text-align:center;
+    background:#0a1710;
+    border:1px solid #173c29;
+    padding:30px 20px;
+    border-radius:20px;
+}
+
+.price-card.featured{
+    border:2px solid #20ff91;
+    transform:scale(1.03);
+}
+
+.price{
+    font-size:28px;
+    color:#20ff91;
+    margin:15px 0;
+    font-weight:bold;
+}
+
+.price-card ul{
+    list-style:none;
+    color:#bbb;
+    margin:20px 0;
+}
+
+.price-card li{
+    margin:7px 0;
+}
+
+/* PORTFOLIO */
+.portfolio{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.project{
+    min-height:180px;
+    border-radius:18px;
+    padding:25px;
+    display:flex;
+    flex-direction:column;
+    justify-content:end;
+    background:
+    linear-gradient(145deg,#103d28,#07120c);
+    border:1px solid rgba(32,255,145,.15);
+}
+
+.project h3{
+    color:#20ff91;
+}
+
+/* CONTACT */
+.contact{
+    text-align:center;
+    background:linear-gradient(180deg,#07110d,#031009);
+}
+
+.contact-box{
+    max-width:650px;
+    margin:auto;
+    background:#09170f;
+    border:1px solid #17462f;
+    padding:35px 25px;
+    border-radius:22px;
+}
+
+.contact-box p{
+    color:#aaa;
+    margin:10px 0 25px;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:30px 20px;
+    color:#777;
+    border-top:1px solid rgba(255,255,255,.06);
+}
+
+footer span{
+    color:#20ff91;
+}
+
+/* MOBILE */
+@media(max-width:800px){
+
+    nav{
+        display:none;
+    }
+
+    .services,
+    .prices,
+    .portfolio{
+        grid-template-columns:1fr;
+    }
+
+    .why{
+        grid-template-columns:1fr;
+    }
+
+    .price-card.featured{
+        transform:none;
+    }
+
+    section{
+        padding:70px 16px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="navbar">
+        <div class="logo">
+            وب<span>‌ساز</span> 🌐
+        </div>
+
+        <nav>
+            <a href="#home">خانه</a>
+            <a href="#services">خدمات</a>
+            <a href="#portfolio">نمونه‌کار</a>
+            <a href="#prices">قیمت‌ها</a>
+            <a href="#contact">تماس</a>
+        </nav>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+    <div class="hero-box">
+
+        <div class="badge">
+            طراحی سایت حرفه‌ای
+        </div>
+
+        <h1>
+            وب‌ساز
+            <span>🌐</span>
+        </h1>
+
+        <p>
+            طراحی سایت‌های مدرن، سریع و واکنش‌گرا
+            برای کسب‌وکارها، کانال‌ها، سرورها و برندهای شخصی.
+        </p>
+
+        <div class="buttons">
+            <a href="#services" class="btn btn-primary">
+                مشاهده خدمات
+            </a>
+
+            <a href="#contact" class="btn btn-secondary">
+                سفارش سایت
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+
+<div class="container">
+
+<div class="section-title">
+    <h2>خدمات <span>وب‌ساز</span></h2>
+    <p>هر چیزی که برای شروع یک حضور حرفه‌ای در وب نیاز داری.</p>
+</div>
+
+<div class="services">
+
+<div class="card">
+    <div class="icon">🌐</div>
+    <h3>سایت شرکتی</h3>
+    <p>
+        طراحی سایت حرفه‌ای برای معرفی شرکت،
+        خدمات و برند شما.
+    </p>
+</div>
+
+<div class="card">
+    <div class="icon">🛒</div>
+    <h3>سایت فروشگاهی</h3>
+    <p>
+        طراحی صفحات فروشگاهی مدرن برای معرفی
+        محصولات و خدمات.
+    </p>
+</div>
+
+<div class="card">
+    <div class="icon">🎮</div>
+    <h3>سایت Minecraft</h3>
+    <p>
+        طراحی سایت اختصاصی برای سرورهای
+        Minecraft و کامیونیتی‌های گیمینگ.
+    </p>
+</div>
+
+<div class="card">
+    <div class="icon">👤</div>
+    <h3>سایت شخصی</h3>
+    <p>
+        صفحه شخصی حرفه‌ای برای معرفی مهارت‌ها،
+        نمونه‌کارها و فعالیت‌ها.
+    </p>
+</div>
+
+<div class="card">
+    <div class="icon">📱</div>
+    <h3>صفحه معرفی کانال</h3>
+    <p>
+        معرفی حرفه‌ای کانال، گروه، پیج یا
+        کسب‌وکار آنلاین شما.
+    </p>
+</div>
+
+<div class="card">
+    <div class="icon">⚡</div>
+    <h3>طراحی واکنش‌گرا</h3>
+    <p>
+        سایت سازگار با موبایل، تبلت و کامپیوتر
+        با ظاهر مدرن.
+    </p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- WHY -->
+<section>
+
+<div class="container">
+
+<div class="section-title">
+    <h2>چرا <span>وب‌ساز؟</span></h2>
+</div>
+
+<div class="why">
+
+<div class="why-box">
+    <h3>⚡ سرعت بالا</h3>
+    <p>طراحی سبک و سریع برای تجربه بهتر کاربران.</p>
+</div>
+
+<div class="why-box">
+    <h3>📱 موبایل‌پسند</h3>
+    <p>نمایش صحیح سایت روی گوشی و کامپیوتر.</p>
+</div>
+
+<div class="why-box">
+    <h3>🎨 طراحی اختصاصی</h3>
+    <p>ظاهر سایت متناسب با موضوع و برند شما.</p>
+</div>
+
+<div class="why-box">
+    <h3>💚 پشتیبانی</h3>
+    <p>ارتباط و پشتیبانی برای تغییرات موردنیاز.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+
+<div class="container">
+
+<div class="section-title">
+    <h2>نمونه‌ <span>کارها</span></h2>
+    <p>چند نمونه از پروژه‌های وب‌ساز</p>
+</div>
+
+<div class="portfolio">
+
+<div class="project">
+    <h3>EmeraldCraft</h3>
+    <p>سایت معرفی سرور Minecraft</p>
+</div>
+
+<div class="project">
+    <h3>Business Web</h3>
+    <p>سایت معرفی کسب‌وکار</p>
+</div>
+
+<div class="project">
+    <h3>Personal Page</h3>
+    <p>صفحه معرفی شخصی</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- PRICES -->
+<section id="prices">
+
+<div class="container">
+
+<div class="section-title">
+    <h2>پلن‌های <span>طراحی</span></h2>
+    <p>قیمت‌ها قابل تغییر بر اساس امکانات پروژه هستند.</p>
+</div>
+
+<div class="prices">
+
+<div class="price-card">
+    <h3>اقتصادی</h3>
+
+    <div class="price">
+        توافقی
+    </div>
+
+    <ul>
+        <li>✔ طراحی ساده</li>
+        <li>✔ واکنش‌گرا</li>
+        <li>✔ صفحه معرفی</li>
+    </ul>
+
+    <a href="#contact" class="btn btn-secondary">
+        سفارش
+    </a>
+</div>
+
+<div class="price-card featured">
+    <h3>حرفه‌ای</h3>
+
+    <div class="price">
+        توافقی
+    </div>
+
+    <ul>
+        <li>✔ طراحی اختصاصی</li>
+        <li>✔ چند صفحه</li>
+        <li>✔ واکنش‌گرا</li>
+        <li>✔ ظاهر حرفه‌ای</li>
+    </ul>
+
+    <a href="#contact" class="btn btn-primary">
+        سفارش
+    </a>
+</div>
+
+<div class="price-card">
+    <h3>اختصاصی</h3>
+
+    <div class="price">
+        توافقی
+    </div>
+
+    <ul>
+        <li>✔ امکانات اختصاصی</li>
+        <li>✔ طراحی کامل</li>
+        <li>✔ صفحات بیشتر</li>
+        <li>✔ پشتیبانی</li>
+    </ul>
+
+    <a href="#contact" class="btn btn-secondary">
+        سفارش
+    </a>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+
+<div class="container">
+
+<div class="section-title">
+    <h2>سفارش <span>سایت</span></h2>
+    <p>برای سفارش یا مشاوره با ما در ارتباط باشید.</p>
+</div>
+
+<div class="contact-box">
+
+<h2>🌐 وب‌ساز</h2>
+
+<p>
+برای دریافت قیمت و ثبت سفارش، از طریق
+کانال یا پیام خصوصی با ما ارتباط بگیرید.
+</p>
+
+<!-- آدرس کانال را اینجا تغییر بده -->
+<a
+href="#"
+class="btn btn-primary"
+>
+📩 ارتباط و سفارش
+</a>
+
+</div>
+
+</div>
+</section>
+
+<footer>
+    © 2026 <span>وب‌ساز</span> | طراحی سایت حرفه‌ای آیدی در روبیکا
+@Websaz1405
+</footer>
+
+</body>
+</html>
